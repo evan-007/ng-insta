@@ -4,6 +4,9 @@ angular.module('instaApp', [])
 })
 .controller('instaCtrl', function($scope, $http){
   $scope.getResults = function(query){
+  	$scope.failed = '';
+  	$scope.images = '';
+		$scope.searching = true;
 		$scope.query = query;
 		$http({
 			method: 'JSONP',
@@ -15,8 +18,16 @@ angular.module('instaApp', [])
 		})
 		.success(function(data, status, headers, config) {
 			console.log(data);
+			$scope.searching = false;
+			if (data.data.length == 0) {
+				$scope.failed = 'No results for your search, please try again';
+			} else {
 			$scope.images = data.data;
 			$scope.count = data.data.length;
+			}
+		})
+		.error(function(data, status, headers, config) {
+			$scope.failed = 'Somthing went wrong, please try again.';
 		});
 	};
   $scope.images = '';
