@@ -1,0 +1,14 @@
+.container {
+  width: 800px;
+  border: 2px solid red;
+  display: block;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.input {
+  text-align: center;
+}
