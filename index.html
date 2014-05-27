@@ -10,7 +10,12 @@
     <div class="container" ng-controller="instaCtrl">
       <div class="header"><img src="images/ng-instagram.png" alt="Angular Instagram" /></div>
       <div class="input">
-        <input type="text" ng-model="query" /><button>Submit</button>
+        <input type="text" ng-model="query" />
+        <button ng-click="getResults(query)">Submit</button>
+        <p ng-if="images">We found {{count}} images.</p>
+        <div class="image" ng-repeat="image in images">
+              <img ng-src="{{image.images.low_resolution.url}}" />
+        </div>
       </div>
     </div>
   </body>

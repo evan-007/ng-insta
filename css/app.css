@@ -1,5 +1,5 @@
 .container {
-  width: 800px;
+  width: 900px;
   border: 2px solid red;
   display: block;
   margin: 0 auto;
@@ -11,4 +11,11 @@
 
 .input {
   text-align: center;
+}
+
+.image {
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
+	display: inline-block;
 }
