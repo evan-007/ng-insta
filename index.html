@@ -16,7 +16,7 @@
         </form>
         <div class="alerts">
           <p ng-if="searching"><i class="fa fa-spinner fa-spin"></i></p>
-          <p ng-if="failed">{{failed}}</p>
+          <p ng-if="failed"><i class="fa fa-smile-o fa-spin"></i>{{failed}}</p>
           <p ng-if="searchForm.searchquery.$error.pattern">Only enter one word</p>
           <p ng-if="images">We found {{count}} images for {{oldQuery}}.</p>
         </div>

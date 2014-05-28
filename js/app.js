@@ -22,7 +22,10 @@ angular.module('instaApp', ['ngAnimate'])
 			console.log(data);
 			$scope.searching = false;
 			$scope.oldQuery = query;
-			if (data.data.length == 0) {
+			if (data.meta.code == '400'){
+				$scope.failed = "That tag isn't allowed"
+			} 
+			else if (data.data.length == 0) {
 				$scope.failed = 'No results for your search, please try again';
 			} else {
 			$scope.images = data.data;
