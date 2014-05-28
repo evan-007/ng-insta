@@ -1,6 +1,5 @@
 .container {
   width: 900px;
-  border: 2px solid red;
   display: block;
   margin: 0 auto;
 }
@@ -27,4 +26,8 @@
 
 .border.ng-enter-active {
 	opacity: 1;
+}
+
+.alerts {
+	text-align: center;
 }

@@ -2,19 +2,24 @@
 <html ng-app="instaApp">
   <head>
     <link rel="stylesheet" href="css/app.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Instagram Searcher</title>
   </head>
   <body>
     <div class="container" ng-controller="instaCtrl">
       <div class="header"><img src="images/ng-instagram.png" alt="Angular Instagram" /></div>
       <div class="input">
-        <form name='searchForm' ng-submit="searchForm.$valid && getResults(query)" novalidate>
-          <input class='form-control' type="text" ng-model="query" ng-pattern='/^\s*\w*\s*$/' required />
-          <input type="submit" value="Submit" ng-click="getResults(query)">
+        <form name='searchForm' ng-submit="getResults(query);" novalidate>
+          <input class='form-control' name='searchquery' type="text" ng-model="query"
+          ng-pattern="word" required />
+          <input type="submit" value="Submit" ng-disabled="searchForm.$invalid" ng-click="getResults(query)">
         </form>
-        <p ng-if="searching">Searching....</p>
-        <p ng-if="failed">{{failed}}</p>
-        <p ng-if="images">We found {{count}} images.</p>
+        <div class="alerts">
+          <p ng-if="searching"><i class="fa fa-spinner fa-spin"></i></p>
+          <p ng-if="failed">{{failed}}</p>
+          <p ng-if="searchForm.searchquery.$error.pattern">Only enter one word</p>
+          <p ng-if="images">We found {{count}} images for {{oldQuery}}.</p>
+        </div>
         <div class="image" ng-repeat="image in images">
               <a ng-href="{{image.link}}"><img ng-src="{{image.images.low_resolution.url}}" /></a>
         </div>

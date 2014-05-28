@@ -3,8 +3,9 @@ angular.module('instaApp', ['ngAnimate'])
     $httpProvider.defaults.useXDomain = true;
 })
 .controller('instaCtrl', function($scope, $http){
-  $scope.singleWord = /^\s*\w*\s*$/;
+  $scope.word = /^\s*\w*\s*$/;
   $scope.getResults = function(query){
+  	console.log($scope.searchForm.$valid);
   	$scope.failed = '';
   	$scope.images = '';
 		$scope.searching = true;
@@ -20,6 +21,7 @@ angular.module('instaApp', ['ngAnimate'])
 		.success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.searching = false;
+			$scope.oldQuery = query;
 			if (data.data.length == 0) {
 				$scope.failed = 'No results for your search, please try again';
 			} else {
