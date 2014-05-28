@@ -18,7 +18,7 @@
 	width: 300px;
 	height: 300px;
 	display: inline-block;
-	transition: all 3s linear;
+	transition: all .5s linear;
 }
 
 .image.ng-enter {

@@ -1,8 +1,9 @@
-angular.module('instaApp', [])
+angular.module('instaApp', ['ngAnimate'])
 .config(function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
 })
 .controller('instaCtrl', function($scope, $http){
+  $scope.singleWord = /^\s*\w*\s*$/;
   $scope.getResults = function(query){
   	$scope.failed = '';
   	$scope.images = '';
