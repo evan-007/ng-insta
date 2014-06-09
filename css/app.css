@@ -12,6 +12,10 @@
   text-align: center;
 }
 
+.alerts {
+	text-align: center;
+}
+
 .image {
 	overflow: hidden;
 	width: 300px;
@@ -26,8 +30,4 @@
 
 .image.ng-enter-active {
 	opacity: 1;
-}
-
-.alerts {
-	text-align: center;
 }
