@@ -20,14 +20,15 @@
           <p ng-if="searchForm.searchquery.$error.pattern">Only enter one word</p>
           <p ng-if="images">We found {{count}} images for {{oldQuery}}.</p>
         </div>
-        <div class="image" ng-repeat="image in images">
+    
+        <div ng-repeat="image in images" class="photo">
               <a ng-href="{{image.link}}"><img ng-src="{{image.images.low_resolution.url}}" /></a>
         </div>
       </div>
     </div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="js/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+    <script src="js/angular-animate.js"></script>
     <script src='js/app.js'></script>
   </body>
 </html>

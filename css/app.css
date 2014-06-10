@@ -16,18 +16,23 @@
 	text-align: center;
 }
 
-.image {
+.photo {
 	overflow: hidden;
 	width: 300px;
 	height: 300px;
 	display: inline-block;
-	transition: all .5s linear;
+  position: relative;
 }
 
-.image.ng-enter {
-	opacity: 0;
+.photo.ng-enter, .photo.ng-leave {
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
 }
 
-.image.ng-enter-active {
-	opacity: 1;
+.photo.ng-enter {
+  left: -100%;
+}
+
+.photo.ng-enter.ng-enter-active {
+  left: 0;
 }
